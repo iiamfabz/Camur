@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAMUR | Implantes dentales en Trujillo</title>
-  <meta name="description" content="Landing de CAMUR enfocada en implantes dentales y rehabilitación oral en Trujillo, Perú." />
+  <title>CAMUR | Implantes dentales</title>
+  <meta name="description" content="CAMUR: evaluación y tratamiento especializado en implantes dentales y rehabilitación oral." />
 
   <!--
-    MEDICIÓN (pendiente):
-    Pega aquí tus scripts de Google Analytics / Google Ads
+    BLOQUE RESERVADO PARA GOOGLE ANALYTICS / GOOGLE ADS
+    Pega aquí tus scripts cuando los actives.
     Ejemplo:
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
     <script>
@@ -21,517 +21,480 @@
 
   <style>
     :root {
-      --bg: #f8f5f1;
-      --surface: #fffdfb;
-      --text: #3e3a37;
-      --text-soft: #6b6662;
-      --accent-coral: #d98f85;
-      --accent-coral-soft: #f0d8d4;
-      --button: #2f2c2a;
-      --button-hover: #1f1d1c;
-      --border: #e8dfd9;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(54, 47, 43, 0.08);
-      --max-width: 1080px;
+      --ivory: #f7f3ee;
+      --surface: #fffdf9;
+      --ink: #2f2c2a;
+      --ink-soft: #68615d;
+      --coral: #d7998f;
+      --coral-soft: #f1ddd8;
+      --line: #e7ddd5;
+      --cta: #201d1b;
+      --cta-hover: #121110;
+      --radius: 18px;
+      --shadow: 0 14px 35px rgba(35, 30, 27, 0.1);
+      --content: 1120px;
+      --ease: 450ms cubic-bezier(.2,.7,.2,1);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fbf8f4 0%, var(--ivory) 55%, #f8f4ef 100%);
+      line-height: 1.45;
+      padding-bottom: 82px;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: 84px;
     }
+    img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin-inline: auto;
-    }
-
-    .section {
-      padding: 2.75rem 0;
-    }
-
-    .section-title {
-      font-size: 1.35rem;
-      line-height: 1.25;
-      margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-intro {
-      color: var(--text-soft);
-      font-size: 0.98rem;
-      max-width: 65ch;
-    }
+    .container { width: min(92%, var(--content)); margin: 0 auto; }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 25;
+      z-index: 30;
       backdrop-filter: blur(8px);
-      background: rgba(248, 245, 241, 0.94);
-      border-bottom: 1px solid rgba(62, 58, 55, 0.08);
+      background: rgba(247, 243, 238, 0.92);
+      border-bottom: 1px solid rgba(45, 40, 36, 0.08);
     }
-
-    .header-inner {
-      min-height: 68px;
+    .header-wrap {
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.8rem;
+      gap: .75rem;
     }
-
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      min-width: 0;
-    }
-
-    .logo {
-      width: 132px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .brand small {
-      color: var(--text-soft);
-      font-size: 0.75rem;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-    }
-
-    .hero {
-      padding-top: 2.2rem;
-      padding-bottom: 1.8rem;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 0.36rem 0.7rem;
-      border-radius: 999px;
-      background: var(--accent-coral-soft);
-      color: #7c4b45;
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: clamp(1.7rem, 6vw, 3rem);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.9rem;
-      max-width: 20ch;
-    }
-
-    .hero-subtitle {
-      color: var(--text-soft);
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-      max-width: 50ch;
-    }
-
-    .cta-row {
-      display: grid;
-      gap: 0.7rem;
+      width: 126px;
+      height: 46px;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     .btn {
-      border: 0;
-      border-radius: 14px;
-      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .72rem 1rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-size: .92rem;
       font-weight: 600;
-      font-size: 0.96rem;
-      padding: 0.88rem 1rem;
+      transition: transform var(--ease), background-color var(--ease), color var(--ease), border-color var(--ease);
       text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
     }
-
     .btn-primary {
-      background: var(--button);
+      background: var(--cta);
       color: #fff;
+      box-shadow: 0 8px 16px rgba(18, 17, 16, 0.2);
     }
+    .btn-primary:hover { background: var(--cta-hover); transform: translateY(-1px); }
 
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      background: var(--button-hover);
+    main { overflow: hidden; }
+
+    .hero { padding: 1.25rem 0 2rem; }
+    .hero-grid { display: grid; gap: 1rem; }
+    .hero-media {
+      height: min(64vh, 510px);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      background: #d9cdc4;
     }
-
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 19, 17, 0.34), rgba(20, 19, 17, 0.04) 52%);
+      pointer-events: none;
     }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus-visible {
-      border-color: #b6aaa1;
-      background: #fff;
+    .tag {
+      display: inline-block;
+      margin-bottom: .65rem;
+      font-size: .75rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #7c5550;
+      background: var(--coral-soft);
+      border: 1px solid #e7c8c2;
+      padding: .35rem .62rem;
+      border-radius: 999px;
+      font-weight: 700;
     }
-
-    .microcopy {
-      margin-top: 0.7rem;
-      font-size: 0.86rem;
-      color: var(--text-soft);
+    h1 {
+      font-size: clamp(1.7rem, 7.2vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 16ch;
+      margin-bottom: .65rem;
     }
+    .lead {
+      color: var(--ink-soft);
+      max-width: 50ch;
+      margin-bottom: 1rem;
+      font-size: .99rem;
+    }
+    .microcopy { color: var(--ink-soft); font-size: .84rem; margin-top: .6rem; }
 
+    .section { padding: 2.25rem 0; }
     .panel {
       background: var(--surface);
-      border: 1px solid var(--border);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
+      padding: 1.15rem;
+    }
+    h2 {
+      font-size: clamp(1.22rem, 5.4vw, 2rem);
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+    }
+    .section-copy { color: var(--ink-soft); max-width: 56ch; font-size: .95rem; }
+
+    .focus-note {
+      margin-top: .85rem;
+      border-left: 3px solid var(--coral);
+      padding-left: .75rem;
+      color: var(--ink-soft);
+      font-size: .92rem;
+    }
+
+    .media-block { display: grid; gap: .8rem; }
+    .media-image {
+      min-height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #d6cbc2;
       box-shadow: var(--shadow);
-      padding: 1.2rem;
+      position: relative;
+    }
+    .media-image.small-detail {
+      min-height: 150px;
+      max-width: 180px;
+      border-radius: 14px;
+      box-shadow: 0 10px 26px rgba(35, 30, 27, 0.14);
+      margin-top: .6rem;
     }
 
-    .focus-list {
-      margin-top: 1rem;
+    .split {
       display: grid;
-      gap: 0.75rem;
-    }
-
-    .focus-item {
-      border-left: 3px solid var(--accent-coral);
-      padding-left: 0.7rem;
-      color: var(--text-soft);
-      font-size: 0.95rem;
-    }
-
-    .cards {
-      display: grid;
-      gap: 0.9rem;
-      margin-top: 1.2rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-    }
-
-    .card h3 {
-      font-size: 1.03rem;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
-    }
-
-    .card p {
-      color: var(--text-soft);
-      font-size: 0.94rem;
+      gap: .9rem;
+      align-items: center;
     }
 
     .investment {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(150deg, #fffdfb, #f6efea);
+      background: linear-gradient(150deg, #fffdfa 5%, #f4ebe4 100%);
+      border-radius: 22px;
+      border: 1px solid var(--line);
       padding: 1.3rem;
+      box-shadow: var(--shadow);
     }
-
     .amount {
-      font-size: 1.7rem;
-      line-height: 1;
-      margin: 0.6rem 0 0.45rem;
-      letter-spacing: -0.03em;
+      margin-top: .35rem;
+      font-size: clamp(1.85rem, 9vw, 2.7rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
     }
 
-    .faq {
-      display: grid;
-      gap: 0.65rem;
-      margin-top: 1rem;
-    }
-
-    .faq-item {
-      border: 1px solid var(--border);
+    .faq { display: grid; gap: .55rem; margin-top: .9rem; }
+    details {
+      border: 1px solid var(--line);
       border-radius: 12px;
-      overflow: hidden;
+      padding: .86rem .88rem;
       background: #fff;
     }
-
-    .faq-question {
-      width: 100%;
-      text-align: left;
-      border: 0;
-      background: #fff;
-      color: var(--text);
-      padding: 0.95rem;
-      font-size: 0.95rem;
-      font-weight: 600;
+    summary {
+      list-style: none;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
+      font-weight: 600;
+      font-size: .93rem;
+      position: relative;
+      padding-right: 1rem;
     }
-
-    .faq-question::after {
-      content: "+";
-      color: var(--accent-coral);
-      font-size: 1.15rem;
-      line-height: 1;
-    }
-
-    .faq-item.open .faq-question::after {
-      content: "–";
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.25s ease;
-      color: var(--text-soft);
-      font-size: 0.93rem;
-      padding: 0 0.95rem;
-    }
-
-    .faq-item.open .faq-answer {
-      max-height: 220px;
-      padding: 0 0.95rem 0.95rem;
+    summary::-webkit-details-marker { display: none; }
+    details p {
+      margin-top: .55rem;
+      color: var(--ink-soft);
+      font-size: .9rem;
+      max-width: 62ch;
     }
 
     .final-cta {
-      text-align: left;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+      box-shadow: var(--shadow);
+      background: #cab8ab;
+    }
+    .final-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(18,16,14,.78), rgba(18,16,14,.42));
+      z-index: 1;
+    }
+    .final-cta-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 1.15rem;
+      display: grid;
+      align-content: end;
+      min-height: 320px;
+      gap: .6rem;
     }
 
     .sticky-cta {
       position: fixed;
+      bottom: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      z-index: 30;
-      border-top: 1px solid var(--border);
-      background: rgba(248, 245, 241, 0.98);
-      padding: 0.7rem 0.8rem calc(0.7rem + env(safe-area-inset-bottom));
+      z-index: 40;
+      background: rgba(247, 243, 238, 0.93);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(45, 40, 36, 0.1);
+      padding: .6rem .7rem;
     }
 
-    .sticky-cta .btn {
-      width: 100%;
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px) scale(.985);
+      transition: opacity var(--ease), transform var(--ease);
+      will-change: transform, opacity;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
 
-    footer {
-      padding: 1.5rem 0 0.8rem;
-      color: var(--text-soft);
-      font-size: 0.84rem;
-      text-align: center;
+    @media (min-width: 760px) {
+      body { padding-bottom: 0; }
+      .header-wrap { min-height: 76px; }
+      .hero { padding-top: 1.8rem; }
+      .hero-grid { grid-template-columns: 1.06fr .94fr; align-items: center; }
+      .hero-media { order: 2; height: 560px; }
+      .split { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+      .split.reverse .media-block { order: 2; }
+      .split.reverse .panel { order: 1; }
+      .sticky-cta { display: none; }
+      .final-cta-content { padding: 2.2rem; min-height: 360px; }
     }
 
-    @media (min-width: 768px) {
-      body {
-        padding-bottom: 0;
-      }
-
-      .section {
-        padding: 4rem 0;
-      }
-
-      .hero {
-        padding-top: 3.2rem;
-      }
-
-      .header-inner {
-        min-height: 74px;
-      }
-
-      .logo {
-        width: 150px;
-      }
-
-      .cta-row {
-        grid-template-columns: repeat(2, minmax(0, 260px));
-      }
-
-      .cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .sticky-cta {
-        display: none;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container header-inner">
-      <a class="brand" href="#inicio" aria-label="Inicio">
-        <img id="brandLogo" class="logo" src="images/Logo-Camur.jpeg" alt="Logo CAMUR" />
+    <div class="container header-wrap">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio">
+        <img id="brandLogo" alt="Logo CAMUR" />
       </a>
-      <small>Clínica SANNA - Sanchez Ferrer, Trujillo, Perú</small>
+      <a class="btn btn-primary js-wa" href="#">Iniciar preevaluación</a>
     </div>
   </header>
 
   <main id="inicio">
     <section class="hero">
-      <div class="container">
-        <span class="eyebrow">Implantes dentales y rehabilitación oral</span>
-        <h1>Planificación precisa para recuperar función y estabilidad dental.</h1>
-        <p class="hero-subtitle">En CAMUR trabajamos casos de implantes con enfoque clínico, evaluación previa y atención privada programada.</p>
-
-        <div class="cta-row">
+      <div class="container hero-grid">
+        <article class="reveal">
+          <span class="tag">Implantes dentales</span>
+          <h1>Evaluación precisa para casos de implantes y rehabilitación oral.</h1>
+          <p class="lead">En CAMUR trabajamos con enfoque clínico programado, orientado a soluciones fijas y planificación de cada caso.</p>
           <a class="btn btn-primary js-wa" href="#">Iniciar preevaluación por WhatsApp</a>
-          <a class="btn btn-secondary js-wa" href="#">Verificar si mi caso aplica</a>
-        </div>
-        <p class="microcopy">Primer paso: una preevaluación breve por WhatsApp antes de agendar atención clínica.</p>
+          <p class="microcopy">El siguiente paso es una preevaluación breve para revisar si su caso aplica.</p>
+        </article>
+
+        <figure class="hero-media reveal" data-parallax>
+          <img id="heroImage" alt="Especialista revisando radiografía para implantes" loading="eager" />
+        </figure>
       </div>
     </section>
 
     <section class="section">
-      <div class="container panel">
-        <h2 class="section-title">Enfoque de esta evaluación</h2>
-        <p class="section-intro">Este canal está diseñado para pacientes que buscan implantes dentales o rehabilitación oral integral en un entorno clínico privado.</p>
+      <div class="container panel reveal">
+        <h2>Enfoque de esta landing</h2>
+        <p class="section-copy">Este canal está orientado a pacientes que buscan implantes dentales y rehabilitación oral integral en entorno clínico privado.</p>
+        <p class="focus-note">No está orientado a urgencias, odontología general ni tratamientos de bajo costo.</p>
+      </div>
+    </section>
 
-        <div class="focus-list">
-          <p class="focus-item">Orientado a soluciones fijas y de largo plazo, con planificación diagnóstica.</p>
-          <p class="focus-item">No está orientado a urgencias, limpiezas, curaciones, extracciones simples ni odontología general de bajo costo.</p>
+    <section class="section">
+      <div class="container split">
+        <figure class="media-block reveal">
+          <div class="media-image" data-parallax>
+            <img id="evaluationImage" alt="Evaluación del caso con radiografía" loading="lazy" />
+          </div>
+        </figure>
+        <article class="panel reveal">
+          <h2>Evaluación y planificación clínica</h2>
+          <p class="section-copy">Cada caso se revisa antes de indicar tratamiento. Primero se evalúa diagnóstico, antecedentes y secuencia recomendada.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split reverse">
+        <figure class="media-block reveal">
+          <div class="media-image" data-parallax>
+            <img id="experienceImage" alt="Paciente en sillón durante atención programada" loading="lazy" />
+          </div>
+          <div class="media-image small-detail">
+            <img id="detailImage" alt="Detalle visual clínico" loading="lazy" />
+          </div>
+        </figure>
+        <article class="panel reveal">
+          <h2>Experiencia clínica privada y programada</h2>
+          <p class="section-copy">Atención organizada por agenda, con tiempos clínicos definidos y entorno profesional controlado.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <figure class="media-block reveal">
+          <div class="media-image" data-parallax>
+            <img id="treatmentImage" alt="Procedimiento especializado de implantes" loading="lazy" />
+          </div>
+        </figure>
+        <article class="investment reveal">
+          <span class="tag">Inversión referencial</span>
+          <h2>Tratamiento con enfoque especializado</h2>
+          <p class="section-copy">La inversión final depende de diagnóstico y planificación clínica.</p>
+          <p class="amount" id="investmentAmount">Desde S/ 4,800</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container panel reveal">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq">
+          <details>
+            <summary>¿Todos califican para implantes?</summary>
+            <p>No. Primero se evalúa su condición oral y antecedentes para confirmar viabilidad clínica.</p>
+          </details>
+          <details>
+            <summary>¿Necesito tomografía?</summary>
+            <p>Frecuentemente sí. Se indica para planificar con precisión y definir el abordaje adecuado.</p>
+          </details>
+          <details>
+            <summary>¿Se puede indicar el valor exacto por WhatsApp?</summary>
+            <p>No de forma exacta. WhatsApp permite una preevaluación breve antes de la valoración clínica completa.</p>
+          </details>
+          <details>
+            <summary>¿Atienden urgencias o tratamientos generales?</summary>
+            <p>Este canal está enfocado en implantes y rehabilitación oral. No está orientado a atención general.</p>
+          </details>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <h2 class="section-title">¿Qué puede esperar de CAMUR?</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Solución fija y estable</h3>
-            <p>Priorizamos tratamientos pensados para devolver soporte, función y comodidad en el tiempo.</p>
-          </article>
-          <article class="card">
-            <h3>Evaluación antes de decidir</h3>
-            <p>Cada caso requiere diagnóstico previo para definir si el implante es indicado y en qué secuencia.</p>
-          </article>
-          <article class="card">
-            <h3>Atención privada y programada</h3>
-            <p>Trabajamos por agenda para asegurar tiempos clínicos adecuados y seguimiento ordenado.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Preguntas frecuentes</h2>
-        <div class="faq" id="faqList">
-          <article class="faq-item">
-            <button class="faq-question" type="button">¿Todos califican para implantes?</button>
-            <div class="faq-answer">
-              <p>No en todos los casos. Primero se revisa historial, condición oral y estudios necesarios para determinar viabilidad.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" type="button">¿Necesito tomografía?</button>
-            <div class="faq-answer">
-              <p>Con frecuencia sí, porque permite planificar con precisión. Se indica según la evaluación de cada paciente.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" type="button">¿Se puede indicar el valor exacto por WhatsApp?</button>
-            <div class="faq-answer">
-              <p>No de forma exacta. WhatsApp se usa para una preevaluación inicial; el plan y presupuesto se definen con diagnóstico clínico.</p>
-            </div>
-          </article>
-          <article class="faq-item">
-            <button class="faq-question" type="button">¿Atienden urgencias o tratamientos generales?</button>
-            <div class="faq-answer">
-              <p>Este canal está enfocado en implantes y rehabilitación oral. Para otros servicios se recomienda una consulta odontológica general.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section final-cta">
-      <div class="container panel">
-        <h2 class="section-title">Siguiente paso</h2>
-        <p class="section-intro">Si está evaluando una solución fija con implantes, puede iniciar ahora una preevaluación breve por WhatsApp.</p>
-        <div class="cta-row" style="margin-top: 1rem;">
+      <div class="container final-cta reveal">
+        <img id="finalImage" alt="Tratamiento especializado en consultorio" loading="lazy" />
+        <div class="final-cta-content">
+          <h2>Si está evaluando implantes, podemos iniciar por una preevaluación breve.</h2>
           <a class="btn btn-primary js-wa" href="#">Iniciar preevaluación por WhatsApp</a>
-          <a class="btn btn-secondary js-wa" href="#">Verificar si mi caso aplica</a>
+          <p class="microcopy" style="color: rgba(255,255,255,.82)">Primero revisamos su caso y le indicamos el siguiente paso recomendado.</p>
         </div>
       </div>
     </section>
   </main>
 
   <div class="sticky-cta">
-    <a class="btn btn-primary js-wa" href="#">Iniciar preevaluación por WhatsApp</a>
+    <a class="btn btn-primary js-wa" href="#">Iniciar preevaluación</a>
   </div>
-
-  <footer>
-    <div class="container">
-      <p>CAMUR · Implantes dentales en Trujillo</p>
-    </div>
-  </footer>
 
   <script>
     // ============================================================
-    // EDITAR AQUÍ (CONFIGURACIÓN PRINCIPAL)
-    // 1) Número WhatsApp en formato internacional sin + ni espacios.
-    // 2) Inversión referencial (texto visible en la sección inversión).
-    // 3) Ruta del logo.
-    // 4) Nombre de marca.
+    // VARIABLES EDITABLES
     // ============================================================
-    const LANDING_CONFIG = {
-      brandName: "CAMUR", // <- EDITAR nombre si deseas
-      whatsappNumber: "51999345168", // <- EDITAR número de WhatsApp
-      logoPath: "images/Logo-Camur.jpeg" // <- EDITAR ruta del logo
+    const CAMUR_CONFIG = {
+      brandName: "CAMUR", // Nombre de marca
+      whatsappNumber: "51999345168", // WhatsApp en formato internacional sin +
+      investmentFrom: "Desde S/ 4,800", // Inversión referencial
+      images: {
+        logo: "assets/logo-camur.png",
+        heroDoctor: "assets/doctor-modelo.jpg",
+        evaluation: "assets/paciente-radiografia.jpg",
+        experience: "assets/paciente-sillon.jpg",
+        treatment: "assets/procedimiento-implantes.jpg",
+        detail: "assets/luz-azul.jpg"
+      }
     };
 
     const WHATSAPP_MESSAGE = "Hola, quiero iniciar la preevaluación para implantes dentales.";
 
-    const logoEl = document.getElementById("brandLogo");
-    const amountEl = document.getElementById("investmentAmount");
-    const sanitizedWhatsAppNumber = LANDING_CONFIG.whatsappNumber.replace(/\D/g, "");
+    const safeNumber = CAMUR_CONFIG.whatsappNumber.replace(/\D/g, "");
+    const waLink = `https://wa.me/${safeNumber}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
-    document.title = `${LANDING_CONFIG.brandName} | Implantes dentales en Trujillo`;
-    logoEl.src = LANDING_CONFIG.logoPath;
-    logoEl.alt = `Logo ${LANDING_CONFIG.brandName}`;
-    if (amountEl && LANDING_CONFIG.investmentFrom) {
-      amountEl.textContent = LANDING_CONFIG.investmentFrom;
-    }
+    document.title = `${CAMUR_CONFIG.brandName} | Implantes dentales`;
 
-    const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-    const waUrl = `https://wa.me/${sanitizedWhatsAppNumber}?text=${encodedMessage}`;
-
-    document.querySelectorAll(".js-wa").forEach((btn) => {
-      btn.setAttribute("href", waUrl);
-      btn.setAttribute("target", "_blank");
-      btn.setAttribute("rel", "noopener noreferrer");
+    document.querySelectorAll(".js-wa").forEach((link) => {
+      link.href = waLink;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
     });
 
-    document.querySelectorAll(".faq-item").forEach((item) => {
-      const question = item.querySelector(".faq-question");
-      question.addEventListener("click", () => {
-        const isOpen = item.classList.contains("open");
+    document.getElementById("investmentAmount").textContent = CAMUR_CONFIG.investmentFrom;
 
-        document.querySelectorAll(".faq-item.open").forEach((openItem) => {
-          openItem.classList.remove("open");
-        });
+    const imageBindings = [
+      ["brandLogo", CAMUR_CONFIG.images.logo, "images/Logo-Camur.jpeg"],
+      ["heroImage", CAMUR_CONFIG.images.heroDoctor, ""],
+      ["evaluationImage", CAMUR_CONFIG.images.evaluation, ""],
+      ["experienceImage", CAMUR_CONFIG.images.experience, ""],
+      ["treatmentImage", CAMUR_CONFIG.images.treatment, ""],
+      ["detailImage", CAMUR_CONFIG.images.detail, ""],
+      ["finalImage", CAMUR_CONFIG.images.treatment, ""]
+    ];
 
-        if (!isOpen) item.classList.add("open");
+    imageBindings.forEach(([id, path, fallback]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.src = path;
+      if (fallback) {
+        el.onerror = () => { el.src = fallback; };
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
       });
-    });
+    }, { threshold: 0.16, rootMargin: "0px 0px -6% 0px" });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const parallaxElements = [...document.querySelectorAll("[data-parallax]")];
+    let ticking = false;
+
+    const parallax = () => {
+      parallaxElements.forEach((item) => {
+        const rect = item.getBoundingClientRect();
+        const center = window.innerHeight / 2;
+        const distance = (rect.top + rect.height / 2) - center;
+        const move = Math.max(-10, Math.min(10, distance * -0.015));
+        item.style.transform = `translateY(${move}px)`;
+      });
+      ticking = false;
+    };
+
+    window.addEventListener("scroll", () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (!ticking) {
+        window.requestAnimationFrame(parallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    parallax();
   </script>
 </body>
 </html>
