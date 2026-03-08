@@ -189,20 +189,6 @@
       line-height: 1.14;
     }
     .visual-copy p { color: var(--ink-soft); font-size: .95rem; }
-    .detail-wrap {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: .62rem;
-    }
-    .detail-image {
-      width: min(44vw, 190px);
-      aspect-ratio: 4/5;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 22px rgba(32, 28, 25, 0.13);
-      background: #cfc3bb;
-    }
-
     .faq-card {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -267,7 +253,7 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
       transition: opacity var(--ease), transform var(--ease);
       will-change: transform, opacity;
     }
@@ -353,15 +339,8 @@
 
     <section class="section">
       <div class="container visual reverse">
-        <figure>
-          <div class="visual-media reveal">
-            <img id="experienceImage" alt="Paciente en atención clínica programada" loading="lazy" />
-          </div>
-          <div class="detail-wrap reveal">
-            <div class="detail-image">
-              <img id="detailImage" alt="Detalle visual secundario del consultorio" loading="lazy" />
-            </div>
-          </div>
+        <figure class="visual-media reveal">
+          <img id="experienceImage" alt="Paciente en atención clínica programada" loading="lazy" />
         </figure>
         <article class="visual-copy reveal">
           <h2>Experiencia clínica privada y atención programada</h2>
@@ -434,8 +413,7 @@
         heroDoctor: "images/camur img 3.jpg",
         evaluation: "images/camur img 2.jpg",
         experience: "images/camur img 1.jpg",
-        treatment: "images/camur img 4.jpg",
-        detail: "images/camur img 5.jpg"
+        treatment: "images/camur img 4.jpg"
       }
     };
 
@@ -458,7 +436,6 @@
       ["evaluationImage", CAMUR_CONFIG.images.evaluation, ""],
       ["experienceImage", CAMUR_CONFIG.images.experience, ""],
       ["treatmentImage", CAMUR_CONFIG.images.treatment, ""],
-      ["detailImage", CAMUR_CONFIG.images.detail, ""],
       ["finalImage", CAMUR_CONFIG.images.treatment, ""]
     ];
 
@@ -475,13 +452,11 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        entry.target.classList.toggle("show", entry.isIntersecting);
       });
     }, {
-      threshold: 0.14,
-      rootMargin: "0px 0px -8% 0px"
+      threshold: 0.28,
+      rootMargin: "-4% 0px -10% 0px"
     });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
