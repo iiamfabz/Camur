@@ -502,14 +502,17 @@
 
     const logoEl = document.getElementById("brandLogo");
     const amountEl = document.getElementById("investmentAmount");
+    const sanitizedWhatsAppNumber = LANDING_CONFIG.whatsappNumber.replace(/\D/g, "");
 
     document.title = `${LANDING_CONFIG.brandName} | Implantes dentales en Trujillo`;
     logoEl.src = LANDING_CONFIG.logoPath;
     logoEl.alt = `Logo ${LANDING_CONFIG.brandName}`;
-    amountEl.textContent = LANDING_CONFIG.investmentFrom;
+    if (amountEl && LANDING_CONFIG.investmentFrom) {
+      amountEl.textContent = LANDING_CONFIG.investmentFrom;
+    }
 
     const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-    const waUrl = `https://wa.me/${LANDING_CONFIG.whatsappNumber}?text=${encodedMessage}`;
+    const waUrl = `https://wa.me/${sanitizedWhatsAppNumber}?text=${encodedMessage}`;
 
     document.querySelectorAll(".js-wa").forEach((btn) => {
       btn.setAttribute("href", waUrl);
